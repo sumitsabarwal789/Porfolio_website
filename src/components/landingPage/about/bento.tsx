@@ -11,12 +11,13 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Globe } from "./globe";
 
 export function BentoGridThirdDemo() {
   return (
     <>
       <h1 className="text-4xl md:text-7xl font-bold text-center mt-10 mb-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-        Coding has no Limitations
+        Technolgies I know
       </h1>
       <BentoGrid className="max-w-4xl mx-5 md:mx-auto md:auto-rows-[20rem]">
         {items.map((item, i) => (
@@ -35,130 +36,109 @@ export function BentoGridThirdDemo() {
 }
 
 const SkeletonOne = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] bg-dot-white/[0.2]  flex-col space-y-2"
-    >
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-white/[0.2] p-2  items-center space-x-2 bg-black"
-      >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-        <div className="w-full  h-4 rounded-full bg-neutral-900" />
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-white/[0.2] p-2 items-center space-x-2 w-3/4 ml-auto bg-black"
-      >
-        <div className="w-full  h-4 rounded-full bg-neutral-900" />
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-      </motion.div>
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-white/[0.2] p-2 items-center space-x-2 bg-black"
-      >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-        <div className="w-full h-4 rounded-full bg-neutral-900" />
-      </motion.div>
-    </motion.div>
+    <>
+      <section className="p-1">
+        <h1 className=" font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 text-lg">
+          Part 1
+        </h1>
+        <ul className="Flex flex-col items-start text-neutral-400 text-sm space-y-1">
+          <span className="text-base my-1"> Technologies:</span>
+          <li>
+            <span className="px-1">&#x2022;</span>HTML, CSS, JS
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>React, Redux, Zustand
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Typescript
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Python, c++, JAVA - basics
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>MongoDB, PostgresQL, MySql
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Zod for input validation
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Mono Repo , Turbo Repo
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Docker
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Cloudflare Workers
+          </li>
+        </ul>
+      </section>
+    </>
   );
 };
-
 const SkeletonTwo = () => {
-  const variants = {
-    initial: {
-      width: 0,
-    },
-    animate: {
-      width: "100%",
-      transition: {
-        duration: 0.2,
-      },
-    },
-    hover: {
-      width: ["0%", "100%"],
-      transition: {
-        duration: 2,
-      },
-    },
-  };
-  const arr = new Array(6).fill(0);
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
-    >
-      {arr.map((_, i) => (
-        <motion.div
-          key={"skelenton-two" + i}
-          variants={variants}
-          style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
-          }}
-          className="flex flex-row rounded-full border border-white/[0.2] p-2  items-center space-x-2 bg-neutral-950 w-full h-4"
-        ></motion.div>
-      ))}
-    </motion.div>
+    <>
+      <section className="p-1">
+        <h1 className=" font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 text-lg">
+          Part 2
+        </h1>
+        <ul className="Flex flex-col items-start text-neutral-400 text-sm space-y-1">
+          <span className="text-base my-1"> Technologies:</span>
+          <li>
+            <span className="px-1">&#x2022;</span>Next JS
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Tailwind CSS, Bootstrap
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>UI - Aceternity
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Websockets
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Redis, Pubsubs, CI/CD
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Open API
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Web RTC, GRPC
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>kubernetes, Kafka
+          </li>
+          <li>
+            {" "}
+            <span className="px-1">&#x2022;</span>Zapier
+          </li>
+        </ul>
+      </section>
+    </>
   );
 };
 
 const SkeletonThree = () => {
-  const variants = {
-    initial: {
-      backgroundPosition: "0 50%",
-    },
-    animate: {
-      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
-    },
-  };
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={variants}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
-      style={{
-        background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-        backgroundSize: "400% 400%",
-      }}
-    >
-      <motion.div className="h-full w-full rounded-lg"></motion.div>
-    </motion.div>
+    <div className="h-32 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent ">
+      <Globe className="absolute  " />
+    </div>
   );
 };
 
@@ -194,51 +174,51 @@ const SkeletonFour = () => {
         variants={first}
         className="h-full w-1/3 rounded-2xl p-4 bg-black border-white/[0.1] border  flex flex-col items-center justify-center"
       >
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzkRhv626uQIvdYA4chtARycRIOP_aV1-2kNlFfy3KMnPOt74dmkxsRhEgTAujj9k7vYo&usqp=CAU"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Just code in Vanilla Javascript
+        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-400 mt-4">
+          The only relationship drama you need
         </p>
         <p className="border border-red-500 bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Delusional
+          PostgreSQL
         </p>
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 border rounded-2xl  p-4 bg-black border-white/[0.1]  flex flex-col items-center justify-center">
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+        <img
+          src="https://www.drupal.org/files/project-images/screenshot_361.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
+        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-400 mt-4">
+          Because writing CSS should be breezy
         </p>
         <p className="border border-green-500 bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Sensible
+          Tailwind
         </p>
       </motion.div>
       <motion.div
         variants={second}
         className="h-full w-1/3 rounded-2xl p-4 bg-black border-white/[0.1] border flex flex-col items-center justify-center"
       >
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+        <img
+          src="https://static-00.iconduck.com/assets.00/react-icon-512x512-u6e60ayf.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
+        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-400 mt-4">
+          Re-rendering made dramatic
         </p>
         <p className="border border-orange-500 bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Helpless
+          React
         </p>
       </motion.div>
     </motion.div>
@@ -281,23 +261,23 @@ const SkeletonFive = () => {
         variants={variants}
         className="flex flex-row rounded-2xl border border-white/[0.2] p-2  items-start space-x-2 bg-black"
       >
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+        <img
+          src="https://i0.wp.com/mkaion.com/wp-content/uploads/2017/07/shutterstock_128647328.jpg"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
+        <p className="text-xs text-neutral-400">
+          What’s your tech stack, and what technologies have you been working
+          with lately?
         </p>
       </motion.div>
       <motion.div
         variants={variantsSecond}
         className="flex flex-row rounded-full border border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-black"
       >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
+        <p className="text-xs text-neutral-400">Secret Sauce 😉</p>
         <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
       </motion.div>
     </motion.div>
@@ -306,59 +286,45 @@ const SkeletonFive = () => {
 
 const items = [
   {
-    title: "AI Content Generation",
-    description: (
-      <span className="text-sm">
-        Experience the power of AI in generating unique content.
-      </span>
-    ),
     header: <SkeletonOne />,
     className: "md:col-span-1",
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Automated Proofreading",
-    description: (
-      <span className="text-sm">
-        Let AI handle the proofreading of your documents.
-      </span>
-    ),
     header: <SkeletonTwo />,
     className: "md:col-span-1",
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Contextual Suggestions",
+    title: "Based in India",
     description: (
-      <span className="text-sm">
-        Get AI-powered suggestions based on your writing context.
+      <span className="text-sm  text-neutral-400">
+        You can hire me from anywhere around the world to work remotely.
       </span>
     ),
     header: <SkeletonThree />,
     className: "md:col-span-1",
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+    icon: <IconSignature className="h-4 w-4 text-neutral-400" />,
   },
   {
-    title: "Sentiment Analysis",
+    title: "Recommendation",
     description: (
-      <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
+      <span className="text-sm text-neutral-400">
+        JS, TS, React, Vite, Tailwind, Zustand—speed meets style!
       </span>
     ),
     header: <SkeletonFour />,
     className: "md:col-span-2",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    icon: <IconTableColumn className="h-4 w-4 text-neutral-400" />,
   },
 
   {
-    title: "Text Summarization",
+    title: "Do you know ?",
     description: (
-      <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
+      <span className="text-sm  text-neutral-400">
+        I process, create, and make the magic happen.
       </span>
     ),
     header: <SkeletonFive />,
     className: "md:col-span-1",
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-400" />,
   },
 ];
