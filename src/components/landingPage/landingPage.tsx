@@ -1,13 +1,20 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Vortex } from "@/components/ui/vortex";
 import Button from "../ui/button";
 import { LampDemo } from "./lamp";
 import { CardsSection } from "./cardSection";
 import { SpotlightNewDemo } from "./about/spotlightbg";
 import { BentoGridThirdDemo } from "./about/bento";
+import Footer from "./footer/footer";
 
 export function LandingPage() {
+  const aboutRef = useRef<HTMLElement | null>(null);
+
+  const scrollToAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <div className="w-screen mx-auto rounded-md  h-[40rem] overflow-hidden">
@@ -52,6 +59,9 @@ export function LandingPage() {
 
       <section className="mt-20">
         <SpotlightNewDemo />
+      </section>
+      <section className="mt-20">
+        <Footer />
       </section>
     </>
   );

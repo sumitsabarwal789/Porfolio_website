@@ -16,21 +16,23 @@ import { Globe } from "./globe";
 export function BentoGridThirdDemo() {
   return (
     <>
-      <h1 className="text-4xl md:text-7xl font-bold text-center mt-10 mb-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-        Technolgies I know
-      </h1>
-      <BentoGrid className="max-w-4xl mx-5 md:mx-auto md:auto-rows-[20rem]">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            className={cn("[&>p:text-lg]", item.className)}
-            icon={item.icon}
-          />
-        ))}
-      </BentoGrid>
+      <section id="service">
+        <h1 className="text-4xl md:text-7xl font-bold text-center mt-10 mb-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          Technologies I know
+        </h1>
+        <BentoGrid className="max-w-4xl mx-5 md:mx-auto md:auto-rows-[20rem]">
+          {items.map((item, i) => (
+            <BentoGridItem
+              key={i}
+              title={item.title}
+              description={item.description}
+              header={item.header}
+              className={cn("[&>p:text-lg]", item.className)}
+              icon={item.icon}
+            />
+          ))}
+        </BentoGrid>
+      </section>
     </>
   );
 }
