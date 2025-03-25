@@ -1,23 +1,22 @@
 "use client";
 import React from "react";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { Boxes } from "@/components/ui/background-boxes";
+import { cn } from "@/lib/utils";
+import { SignupFormDemo } from "@/components/Form";
 
-function Contact() {
+export default function Contact() {
   return (
-    <div className="w-full h-screen overflow-hidden flex justify-center items-center">
-      <div>
-        <h1 className="text-5xl font-medium z-10">This is a Contact Us Section</h1>
-        <input
-          type="text"
-          placeholder="Enter Your Name"
-          className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700 px-4 py-2"
-        />
-        <input type="email" placeholder="Email Address" className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700 px-4 py-2" />
-        <input type="submit" value={"SUBMIT"} className="text-center text-black rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-white placeholder:text-neutral-700 px-4 py-2 cursor-pointer" />
+    <div className="h-screen relative w-full overflow-hidden bg-black flex flex-col items-center justify-center rounded-lg mt-1">
+      <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <Boxes />
+      <div className={cn(" text-white relative z-20 ")}>
+        <h1 className="text-4xl  font-bold text-center  mb-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          Send Message
+        </h1>
+        <div className="">
+          <SignupFormDemo />
+        </div>
       </div>
-      <BackgroundBeams/>
     </div>
-  )
+  );
 }
-
-export default Contact

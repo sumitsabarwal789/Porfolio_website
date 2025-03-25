@@ -4,6 +4,7 @@ import { Vortex } from "@/components/ui/vortex";
 import Button from "../ui/button";
 import { LampDemo } from "./lamp";
 import { CardsSection } from "./cardSection";
+import { SpotlightNewDemo } from "./about/spotlightbg";
 
 export function LandingPage() {
   return (
@@ -22,7 +23,6 @@ export function LandingPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
             <Button text="Projects" />
-            <button className="px-4 py-2  text-white ">Watch trailer</button>
           </div>
         </Vortex>
       </div>
@@ -44,6 +44,10 @@ export function LandingPage() {
           />
         </div>
       </div>
+
+      <section className="mt-20">
+        <SpotlightNewDemo />
+      </section>
     </>
   );
 }
