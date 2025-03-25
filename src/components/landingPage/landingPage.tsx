@@ -10,7 +10,7 @@ export function LandingPage() {
   return (
     <>
       <div className="w-[calc(100%-4rem)] mx-auto rounded-md  h-[40rem] overflow-hidden">
-        {/* <Vortex
+        <Vortex
           backgroundColor="black"
           className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
         >
@@ -24,7 +24,7 @@ export function LandingPage() {
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
             <Button text="Projects" />
           </div>
-        </Vortex> */}
+        </Vortex>
       </div>
 
       <div className="projects lg:mt-36">
