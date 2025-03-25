@@ -5,11 +5,12 @@ import Button from "../ui/button";
 import { LampDemo } from "./lamp";
 import { CardsSection } from "./cardSection";
 import { SpotlightNewDemo } from "./about/spotlightbg";
+import { BentoGridThirdDemo } from "./about/bento";
 
 export function LandingPage() {
   return (
     <>
-      <div className="w-[calc(100%-4rem)] mx-auto rounded-md  h-[40rem] overflow-hidden">
+      <div className="w-screen mx-auto rounded-md  h-[40rem] overflow-hidden">
         <Vortex
           backgroundColor="black"
           className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
@@ -47,6 +48,10 @@ export function LandingPage() {
 
       <section className="mt-20">
         <SpotlightNewDemo />
+      </section>
+
+      <section className="mt-20">
+        <BentoGridThirdDemo />
       </section>
     </>
   );
