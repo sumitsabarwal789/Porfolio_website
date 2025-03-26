@@ -9,6 +9,8 @@ import {
   IconBrandOnlyfans,
   IconBrandInstagram,
 } from "@tabler/icons-react";
+import Link from "next/link";
+import { AnimatedTooltipPreview } from "./landingPage/footer/tooltip";
 
 export function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,15 +46,8 @@ export function SignupFormDemo() {
 
         <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 
-        <div className="flex space-x-5 justify-center">
-          <IconBrandGithub className="h-6 w-6 text-neutral-400 hover:scale-110 hover:text-indigo-400" />
-          <BottomGradient />
-          <IconBrandGoogle className="h-6 w-6  text-neutral-400 hover:scale-110 hover:text-indigo-400" />
-          <BottomGradient />
-          <IconBrandOnlyfans className="h-6 w-6 text-neutral-400 hover:scale-110 hover:text-indigo-400" />
-          <BottomGradient />
-          <IconBrandInstagram className="h-6 w-6 text-neutral-400 hover:scale-110 hover:text-indigo-400" />
-          <BottomGradient />
+        <div className="flex space-x-5 justify-center mt-4">
+          <AnimatedTooltipPreview />
         </div>
       </form>
     </div>

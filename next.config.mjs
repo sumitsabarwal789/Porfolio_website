@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["pbs.twimg.com", "images.unsplash.com", "assets.aceternity.com"], // Allow external images from Twitter
+    domains: [
+      "pbs.twimg.com",
+      "images.unsplash.com",
+      "assets.aceternity.com",
+      "ichef.bbci.co.uk",
+      "cdn-icons-png.flaticon.com",
+    ], // Allow external images from Twitter
   },
 };
 

@@ -6,6 +6,7 @@ import {
   IconBrandOnlyfans,
 } from "@tabler/icons-react";
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -56,9 +57,9 @@ export default function Footer() {
             </a>
             <BottomGradient />
 
-            <a href="https://github.com/sumitsabarwal789?tab=repositories">
+            <Link href={"/onlyf"}>
               <IconBrandOnlyfans className="h-6 w-6 text-neutral-400 hover:scale-110 hover:text-slate-600" />
-            </a>
+            </Link>
             <BottomGradient />
           </div>
         </div>
