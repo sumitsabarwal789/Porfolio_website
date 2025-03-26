@@ -29,7 +29,7 @@ export function LandingPage() {
         </Vortex>
       </div>
 
-      <div className="projects lg:mt-36">
+      <div className="projects lg:mt-36" id="projects">
         <LampDemo />
         <div className="flex flex-col lg:flex-row justify-center mx-2 lg:space-x-8">
           <CardsSection
