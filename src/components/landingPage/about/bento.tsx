@@ -20,7 +20,7 @@ export function BentoGridThirdDemo() {
         <h1 className="text-4xl md:text-7xl font-bold text-center mt-10 mb-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           Technologies I know
         </h1>
-        <BentoGrid className="max-w-4xl mx-5 md:mx-auto md:auto-rows-[20rem]">
+        <BentoGrid className="max-w-7xl mx-5 md:mx-28 md:auto-rows-[20rem]">
           {items.map((item, i) => (
             <BentoGridItem
               key={i}
@@ -104,7 +104,8 @@ const SkeletonTwo = () => {
           </li>
           <li>
             {" "}
-            <span className="px-1">&#x2022;</span>UI - Aceternity
+            <span className="px-1">&#x2022;</span>UI -
+            Aceternity,ShadCN,Flowbite
           </li>
           <li>
             {" "}

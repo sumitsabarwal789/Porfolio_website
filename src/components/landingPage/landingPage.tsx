@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { Vortex } from "@/components/ui/vortex";
 import Button from "../ui/button";
 import { LampDemo } from "./lamp";
@@ -9,18 +9,12 @@ import { BentoGridThirdDemo } from "./about/bento";
 import Footer from "./footer/footer";
 
 export function LandingPage() {
-  const aboutRef = useRef<HTMLElement | null>(null);
-
-  const scrollToAbout = () => {
-    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <>
-      <div className="w-screen mx-auto rounded-md  h-[40rem] overflow-hidden">
+      <div className="w-screen mx-auto rounded-md h-[40rem] overflow-hidden">
         <Vortex
           backgroundColor="black"
-          className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+          className="flex flex-col items-center justify-center px-2 md:px-10 py-4 w-full h-full"
         >
           <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
             Code, learn, innovate, repeat!
@@ -37,7 +31,7 @@ export function LandingPage() {
 
       <div className="projects lg:mt-36">
         <LampDemo />
-        <div className="flex flex-col lg:flex-row justify-center first-line:mx-2 mx-10 lg:mx-20 lg:space-x-8">
+        <div className="flex flex-col lg:flex-row justify-center mx-2 lg:space-x-8">
           <CardsSection
             img="/PMC.png"
             heading="PrintMyCase.com"
@@ -47,7 +41,7 @@ export function LandingPage() {
           <CardsSection
             img="/DOC.jpg"
             heading="DocBook.com"
-            description="Busy. No Problem , Our business is transforming healthcare accessibility by offering seamless online doctor consultations."
+            description="Busy? No Problem. Our business is transforming healthcare accessibility by offering seamless online doctor consultations."
             url="https://docbook-frontend-bkvm.onrender.com"
           />
         </div>
@@ -55,12 +49,7 @@ export function LandingPage() {
 
       <section className="mt-20">
         <BentoGridThirdDemo />
-      </section>
-
-      <section className="mt-20">
         <SpotlightNewDemo />
-      </section>
-      <section className="mt-20">
         <Footer />
       </section>
     </>

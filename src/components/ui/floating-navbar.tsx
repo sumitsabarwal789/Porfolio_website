@@ -80,7 +80,7 @@ export const FloatingNav = ({
           <span className="absolute inset-0 overflow-hidden rounded-full">
             <span
               className="absolute inset-0 rounded-full 
-               bg-[radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.7)_0%,rgba(255,19,240,1)_75%)] 
+               bg-[radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.7)_25%,rgba(255,19,240,1)_100%)] 
                opacity-0 transition-opacity duration-500 ease-in-out 
                group-hover:opacity-100 group-hover:scale-110 blur-xl"
             ></span>
@@ -103,7 +103,7 @@ export const FloatingNav = ({
               ></path>
             </svg>
           </div>
-          <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-[#FF13F0] to-purple-500 transition-opacity duration-500 group-hover:opacity-40"></span>
+          <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500 to-[#0f172a] transition-opacity duration-500 group-hover:opacity-40"></span>
         </button>
       </motion.div>
     </AnimatePresence>
