@@ -7,7 +7,7 @@ import { SignupFormDemo } from "@/components/Form";
 export default function Contact() {
   return (
     <>
-      <div className="h-screen relative w-full overflow-hidden bg-black flex flex-col items-center justify-center rounded-lg mt-1">
+      <div className="h-screen relative w-full overflow-hidden bg-black flex flex-col items-center justify-center rounded-lg mt-24">
         <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
         <div className={cn(" text-white relative z-20 ")}>

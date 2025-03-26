@@ -1,46 +1,122 @@
-"use client";
-import React from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-  IconBrandInstagram,
-} from "@tabler/icons-react";
-import Link from "next/link";
 import { AnimatedTooltipPreview } from "./landingPage/footer/tooltip";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    },
+    []
+  );
+
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (!formData.name || !formData.email || !formData.message) return;
+
+      setIsLoading(true);
+      setStatus("Sending...");
+
+      try {
+        const response = await fetch("/api/contactme", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          setStatus("Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          const data = await response.json();
+          setStatus(data.error || "Failed to send message. Please try again.");
+        }
+      } catch (error) {
+        setStatus("Failed to send message. Please try again later.");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [formData]
+  );
+
+  useEffect(() => {
+    if (status === "Message sent successfully!") {
+      toast.success("Message sent successfully! 🎉", {
+        position: "top-right",
+        autoClose: 15000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
+    } else if (status && status !== "Sending...") {
+      toast.error(status);
+    }
+  }, [status]);
+
   return (
-    <div className="shadow-input mx-auto w-full min-w-[22rem] md:min-w-[28rem]  bg-black p-4 rounded-2xl md:p-8 dark:bg-black">
-      <h2 className="text-xl font-bold text-neutral-400 ">Want to hire me</h2>
+    <div className="shadow-input mx-auto w-full min-w-[22rem] md:min-w-[28rem] bg-black p-4 rounded-2xl md:p-8 dark:bg-black">
+      <h2 className="text-xl font-bold text-neutral-400">Want to hire me</h2>
       <form className="my-2" onSubmit={handleSubmit}>
-        <div className="mb-4 flex flex-col space-y-2  md:space-y-0 ">
+        <div className="mb-4 flex flex-col space-y-2 md:space-y-0">
           <LabelInputContainer className="mb-4 space-y-3">
-            <Label htmlFor="email">Email Address</Label>
-            <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
-          </LabelInputContainer>
-          <LabelInputContainer className="mb-4 space-y-3">
-            <Label htmlFor="firstname">Your Message</Label>
+            <Label htmlFor="name">Your Name</Label>
             <Input
-              id="firstname"
-              placeholder="Write your message"
+              id="name"
+              placeholder="John Doe"
               type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-4 space-y-">
+            <Label htmlFor="email">Email Address</Label>
+            <Input
+              id="email"
+              placeholder="you@example.com"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </LabelInputContainer>
+          <LabelInputContainer className="mb-4 space-y-3 pt-4">
+            <Label htmlFor="message">Your Message</Label>
+            <Input
+              id="message"
+              placeholder="Write your message"
+              value={formData.message}
+              onChange={handleChange}
+              required
             />
           </LabelInputContainer>
         </div>
 
         <button
-          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-lg dark:bg-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed"
           type="submit"
+          disabled={
+            !formData.name || !formData.email || !formData.message || isLoading
+          }
         >
-          Send Message
+          {isLoading ? "Sending..." : "Send Message"}
           <BottomGradient />
         </button>
 
@@ -50,6 +126,7 @@ export function SignupFormDemo() {
           <AnimatedTooltipPreview />
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 }
