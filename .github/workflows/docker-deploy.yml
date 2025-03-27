@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - master
+  # Allow manual triggering
+  workflow_dispatch:
 
 jobs:
   build-and-push-docker:
@@ -13,6 +15,8 @@ jobs:
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -22,6 +26,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Check Docker Login Status
+        run: |
+          echo "Docker Hub login successful, proceeding with build and push"
+          docker info
 
       - name: Build and Push Docker image
         uses: docker/build-push-action@v4
@@ -37,3 +46,9 @@ jobs:
         run: |
           echo "Image pushed to Docker Hub: sumitsabarwal5/portfolio:latest"
           echo "Check it at https://hub.docker.com/r/sumitsabarwal5/portfolio"
+
+      - name: Deployment Status
+        run: |
+          echo "Deployment workflow completed"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
