@@ -52,7 +52,7 @@ export default function Footer() {
             </a>
             <BottomGradient />
 
-            <a href="https://github.com/sumitsabarwal789?tab=repositories">
+            <a href="https://sumitsabarwal7@gmail.com">
               <IconBrandGoogle className="h-6 w-6 text-neutral-400 hover:scale-110 hover:text-slate-600" />
             </a>
             <BottomGradient />
